@@ -3,7 +3,7 @@ describe("Classes", () => {
   describe("definition", () => {
     it("are defined using class keyword", () => {
       class Animal {};
-      expect().toBeDefined();
+      expect(Animal).toBeDefined();
     });
 
     it("new creates new instances", () => {
@@ -175,7 +175,7 @@ describe("Classes", () => {
         }
       }
       const thisTest = new ThisTest();
-      expect(solveme).toBe(thisTest.getThisWithFn());
+      expect(thisTest).toBe(thisTest.getThisWithFn());
     });
 
     it("() => {} shorthand functions preserves this", () => {
@@ -224,7 +224,7 @@ describe("Classes", () => {
       const otherObj = {
         getThis: instance.getThis,
       };
-      expect(solveme).toBe(otherObj.getThis());
+      expect(otherObj).toBe(otherObj.getThis());
     });
 
     it('shorthand functions always preserves the original this', () => {
@@ -236,7 +236,7 @@ describe("Classes", () => {
       }
       const instance = new ThisTest();
       const getThis = instance.getGetThisFn();
-      expect(solveme).toBe(getThis());
+      expect(instance).toBe(getThis());
     });
   });
 
@@ -255,7 +255,7 @@ describe("Classes", () => {
       }
       const instance = new ThisTest();
       const getThis = instance.getThis;
-      expect(solveme).toBe(getThis());
+      expect(instance).toBe(getThis());
     });
   });
 
